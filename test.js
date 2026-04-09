@@ -22,11 +22,11 @@ async function test() {
         const [resultRecepcionError] = await clientRecepcion.validarComprobanteAsync({ xml: Buffer.from(xmlError).toString('base64') });
         console.log('Result Error:', JSON.stringify(resultRecepcionError, null, 2));
 
-        // Test Recepcion Error Simulation (Error 70 - Clave en procesamiento)
-        console.log('\nTesting Recepcion Error Simulation (Error 70) - MOCK_ERR_70...');
-        const xmlError70 = '<xml><!-- MOCK_ERR_70 --></xml>';
-        const [resultRecepcionError70] = await clientRecepcion.validarComprobanteAsync({ xml: Buffer.from(xmlError70).toString('base64') });
-        console.log('Result Error 70:', JSON.stringify(resultRecepcionError70, null, 2));
+        // Test Recepcion Error Simulation (Error 27 - Clase no permitida)
+        console.log('\nTesting Recepcion Error Simulation (Error 27) - MOCK_ERR_27...');
+        const xmlError27 = '<xml><!-- MOCK_ERR_27 --></xml>';
+        const [resultRecepcionError27] = await clientRecepcion.validarComprobanteAsync({ xml: Buffer.from(xmlError27).toString('base64') });
+        console.log('Result Error 27:', JSON.stringify(resultRecepcionError27, null, 2));
 
         // Test Autorizacion
         console.log('\nTesting AutorizacionComprobantesOffline...');
